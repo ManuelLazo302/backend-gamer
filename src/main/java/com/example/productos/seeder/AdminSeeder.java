@@ -18,7 +18,7 @@ public class AdminSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        if (userRepository.findByUsername("admin").isEmpty()) {
+        if (userRepository.findByNombre("admin").isEmpty()) {
             User admin = new User();
             admin.setNombre("Administrador");
             admin.setClave(passwordEncoder.encode("admin123"));

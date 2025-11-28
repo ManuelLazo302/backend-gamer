@@ -23,7 +23,7 @@ public class OrderController {
     @GetMapping
     public List<Order> getOrders(@RequestParam(required = false)LocalDateTime dateCreated) {
         if (dateCreated != null) {
-            return orderRepository.findByDate(dateCreated);
+            return orderRepository.findByDateCreated(dateCreated);
         }
         return orderRepository.findAll();
     }
