@@ -5,21 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-
-public class Producto {
+@AllArgsConstructor
+@Table(name = "reviews")
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private double price;
-    private String category;
-    private String desc;
-    private List<String> images;
-    private List<String> specs;
+    private String productId;
+    private String userEmail;
+    private Integer rating;
+    private String comment;
 }

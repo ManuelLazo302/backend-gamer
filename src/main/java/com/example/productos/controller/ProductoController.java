@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/productos")
+@RequestMapping("api/products")
 @Tag(name = "Products", description = "Product Management System")
 public class ProductoController {
 
@@ -43,9 +43,10 @@ public class ProductoController {
             existingProduct.setId(producto.getId());
             existingProduct.setName(producto.getName());
             existingProduct.setPrice(producto.getPrice());
-            existingProduct.setImage(producto.getImage());
-            existingProduct.setCategory(producto.getCategory());
+            existingProduct.setImages(producto.getImages());
             existingProduct.setDesc(producto.getDesc());
+            existingProduct.setCategory(producto.getCategory());
+            existingProduct.setSpecs(producto.getSpecs());
             return productoService.saveProduct(existingProduct);
         }
         return null;

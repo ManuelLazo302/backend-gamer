@@ -6,6 +6,7 @@ import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.relation.Role;
 import java.util.Map;
 
 @RestController
@@ -26,7 +27,7 @@ public class AuthController {
         String password = body.get("password");
         if (username == null || password == null || username.isBlank() ||
                 password.isBlank()) {
-            throw new IllegalArgumentException("Username y password son requeridos");
+            throw new IllegalArgumentException("Username, password y correo son requeridos");
         }
         userService.register(username, password);
         return Map.of("message", "Usuario registrado correctamente");
