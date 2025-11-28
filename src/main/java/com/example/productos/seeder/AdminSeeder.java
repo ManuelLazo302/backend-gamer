@@ -20,14 +20,13 @@ public class AdminSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
         if (userRepository.findByUsername("admin").isEmpty()) {
             User admin = new User();
-            admin.setUsername("Administrador");
-            admin.setPassword(passwordEncoder.encode("admin123"));
+            admin.setNombre("Administrador");
+            admin.setClave(passwordEncoder.encode("admin123"));
             admin.setEmail("admin@levelup.com");
             admin.setAdmin(true);
 
             userRepository.save(admin);
         }
     }
-
 
 }

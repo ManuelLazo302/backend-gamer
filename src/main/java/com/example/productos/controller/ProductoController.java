@@ -44,7 +44,7 @@ public class ProductoController {
             existingProduct.setName(producto.getName());
             existingProduct.setPrice(producto.getPrice());
             existingProduct.setImages(producto.getImages());
-            existingProduct.setDesc(producto.getDesc());
+            existingProduct.setDescription(producto.getDescription());
             existingProduct.setCategory(producto.getCategory());
             existingProduct.setSpecs(producto.getSpecs());
             return productoService.saveProduct(existingProduct);

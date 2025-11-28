@@ -23,19 +23,19 @@ public class AuthController {
     }
     @PostMapping("/register")
     public Map<String, String> register(@RequestBody Map<String, String> body) {
-        String username = body.get("username");
-        String password = body.get("password");
+        String username = body.get("nombre");
+        String password = body.get("clave");
         if (username == null || password == null || username.isBlank() ||
                 password.isBlank()) {
-            throw new IllegalArgumentException("Username, password y correo son requeridos");
+            throw new IllegalArgumentException("Username, password son requeridos");
         }
         userService.register(username, password);
         return Map.of("message", "Usuario registrado correctamente");
     }
     @PostMapping("/login")
     public Map<String, String> login(@RequestBody Map<String, String> body) {
-        String username = body.get("username");
-        String password = body.get("password");
+        String username = body.get("nombre");
+        String password = body.get("clave");
         Authentication auth = authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(username, password));
         if (auth.isAuthenticated()) {

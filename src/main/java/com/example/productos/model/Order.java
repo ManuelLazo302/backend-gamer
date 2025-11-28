@@ -18,9 +18,8 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String userEmail;
-    private String productIds;
-    private Double totalAmount;
+    private String items;
+    private Double total;
     private LocalDateTime dateCreated = LocalDateTime.now();
 
 }

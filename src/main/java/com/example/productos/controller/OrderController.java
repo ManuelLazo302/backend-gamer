@@ -5,6 +5,7 @@ import com.example.productos.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -20,9 +21,9 @@ public class OrderController {
     }
 
     @GetMapping
-    public List<Order> getOrders(@RequestParam(required = false) String userEmail) {
-        if (userEmail != null) {
-            return orderRepository.findByUserEmail(userEmail);
+    public List<Order> getOrders(@RequestParam(required = false)LocalDateTime dateCreated) {
+        if (dateCreated != null) {
+            return orderRepository.findByDate(dateCreated);
         }
         return orderRepository.findAll();
     }

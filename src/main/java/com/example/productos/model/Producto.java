@@ -19,7 +19,7 @@ public class Producto {
     private String name;
     private double price;
     private String category;
-    private String desc;
+    private String description;
     private List<String> images;
     private List<String> specs;
 }
